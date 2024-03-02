@@ -11,7 +11,7 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-        <Route path="" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/counter" element={<Counter />} />
