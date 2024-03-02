@@ -13,7 +13,6 @@ const MainRoutes = () => {
     <Routes>
       <Route element={<RootLayout />}>
         <Route path="/home" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/counter" element={<Counter />} />
