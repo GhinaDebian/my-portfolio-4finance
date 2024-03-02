@@ -1,0 +1,17 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  background-color: aquamarine;
+  height: 52px;
+  padding: 0 5%; /*shorthand*/
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  nav {
+    ul {
+      display: flex;
+      list-style-type: none;
+      gap: 10px;
+    }
+  }
+}
