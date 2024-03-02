@@ -6,12 +6,14 @@ import NotFound from "./pages/notFound/NotFound";
 import { Route, Routes } from "react-router-dom";
 import Counter from "./pages/counter/Counter";
 import RootLayout from "./layout/rootlayout/RootLayout";
+import AboutUs from "./pages/about-us/AboutUs";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
         <Route path="/home" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/counter" element={<Counter />} />
