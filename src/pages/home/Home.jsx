@@ -3,32 +3,32 @@ import { Header } from "../../layout/header/Header";
 import { Button } from "@mui/material";
 import Footer from "../../layout/footer/Footer";
 import Card from "../../components/card/Card";
+import { arrayOfNumbers, devs, people } from "../../utils/dummyData";
 
 const Home = () => {
-  const names = ["Jane", "John", "Doe"];
-  const name = "John";
-  const middleName = "James";
-  let lastName = "Doe";
-  const age = 36;
-  const persons = [
-    {
-      id: 1,
-      name: "Jane",
-      lastName: "Doe",
-      age: 36,
-      clothes: { jacket: "blue" },
-    },
-    { id: 2, name: "John", lastName: "Did", age: 20 },
-    { id: 3, name: "gg", lastName: "Deb", age: 76 },
-  ];
-
   const numbers = [5, 10, 90, 3, 9];
   const doubleNumbers = numbers.map((number) => number * 2);
+
+  const devWithId = devs.map((element, index) => {
+    return { ...element, id: index + 1 };
+  });
+
+  const filterNumbers = arrayOfNumbers.filter((element) => element <= 15);
+
+  const filterYoungDevs = devs.filter((element) => element.age <= 34);
+  const findSpecificDevInfo = devs.find((element) => element.name === "Johnny");
+  const findSpecificDevIndex = devs.findIndex((element) => {
+    return element.name === "Johnny";
+  });
+  const fillWithOnes = arrayOfNumbers.fill(1, 6);
+  const isManager = devs.some((element) => {
+    return element.role.toLowerCase() === "frontend";
+  });
 
   return (
     <>
       <main className="main-container">
-        {persons.map((person) => (
+        {people.map((person) => (
           <Card
             id={person.id}
             firstName={person.name}
@@ -38,6 +38,21 @@ const Home = () => {
           />
         ))}
       </main>
+      {JSON.stringify(devWithId)}
+      <br />
+      <br />
+      {JSON.stringify(filterNumbers)}
+      <br />
+      <br />
+      {JSON.stringify(filterYoungDevs)}
+      <br />
+      {JSON.stringify(findSpecificDevInfo)}
+      <br />
+      {JSON.stringify(findSpecificDevIndex)}
+      <br />
+      {JSON.stringify(fillWithOnes)}
+      <br />
+      {JSON.stringify(isManager)}
     </>
   );
 };
