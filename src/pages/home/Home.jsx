@@ -3,7 +3,12 @@ import { Header } from "../../layout/header/Header";
 import { Button } from "@mui/material";
 import Footer from "../../layout/footer/Footer";
 import Card from "../../components/card/Card";
-import { arrayOfNumbers, devs, people } from "../../utils/dummyData";
+import {
+  arrayOfNumbers,
+  devs,
+  devsArrayOfString,
+  people,
+} from "../../utils/dummyData";
 
 const Home = () => {
   const numbers = [5, 10, 90, 3, 9];
@@ -20,11 +25,20 @@ const Home = () => {
   const findSpecificDevIndex = devs.findIndex((element) => {
     return element.name === "Johnny";
   });
-  const fillWithOnes = arrayOfNumbers.fill(1, 6);
+
+  const fillWithOnes = [...arrayOfNumbers];
+  fillWithOnes.fill(1, 6);
   const isManager = devs.some((element) => {
     return element.role.toLowerCase() === "frontend";
   });
 
+  const frontendAbove30Devs = devs.filter((element) => {
+    return element.role.toLowerCase() === "frontend" && element.age > 30;
+  });
+  console.log("frontend and above 30:", frontendAbove30Devs);
+  console.log(arrayOfNumbers.filter((element) => element >= 0));
+  console.log(arrayOfNumbers.map((element) => element * 3));
+  console.log(devsArrayOfString.filter((element) => element.length >= 6));
   return (
     <>
       <main className="main-container">

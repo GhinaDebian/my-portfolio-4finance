@@ -1,8 +1,8 @@
 export const devs = [
-  { name: "Steave", role: "frontend", age: 24 },
+  { name: "Steave", role: "FrontEND", age: 24 },
   { name: "Andrew", role: "backend", age: 28 },
   { name: "James", role: "backend", age: 17 },
-  { name: "Johnny", role: "backend", age: 17 },
+  { name: "Johnny", role: "frontend", age: 32 },
   { name: "Jeffrey", role: "frontend", age: 43 },
   { name: "GG", role: "backend", age: 36 },
 ];
