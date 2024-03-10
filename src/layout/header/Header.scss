@@ -12,6 +12,17 @@
       display: flex;
       list-style-type: none;
       gap: 10px;
+      li {
+        a {
+          text-decoration: none;
+          &.active {
+            color: red;
+          }
+          &:hover {
+            color: pink;
+          }
+        }
+      }
     }
   }
 }

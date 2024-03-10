@@ -49,6 +49,7 @@ const Home = () => {
             lastName={person.lastName}
             age={person.age}
             color={person.clothes?.jacket}
+            onClick={() => alert(person?.id)}
           />
         ))}
       </main>

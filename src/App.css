@@ -6,29 +6,12 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.main-container {
+
+.app-main {
+  display: flex;
+  justify-content: center;
   margin: 0 20px;
-  margin-top: 70px;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* background-color: blue; */
 }
-
-/* .App-container {
-  background-color: aqua;
-} */
-
-/* .app-header {
-  display: flex;
-  align-items: center;
-  background-color: aquamarine;
-  height: 52px;
-  padding: 0 5%; 
-  position: fixed;
-  width: 100vw;
-  top: 0;
-} */
-/* .app-footer {
-  display: flex;
-  background-color: aquamarine;
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-} */

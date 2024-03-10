@@ -7,7 +7,7 @@ const RootLayout = (props) => {
   return (
     <>
       <Header />
-      <main>
+      <main className="app-main">
         <Outlet />
       </main>
       <Footer />
