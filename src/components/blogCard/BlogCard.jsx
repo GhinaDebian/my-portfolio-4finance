@@ -14,7 +14,11 @@ const BlogCard = (props) => {
       </p>
       <p>{content}</p>
       <br />
-      <p>{tags.map((element) => element)}</p>
+      <p>
+        {tags.map((element) => {
+          return <>{element + ", "}</>;
+        })}
+      </p>
       <Button variant="outlined" onClick={onClick}>
         {buttonMessage}
       </Button>

@@ -1,22 +1,26 @@
 .app-header {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: aquamarine;
   height: 52px;
-  padding: 0 5%; /*shorthand*/
+  // padding: 0 5%;
   position: fixed;
   width: 100vw;
   top: 0;
   nav {
-    ul {
+    menu {
       display: flex;
       list-style-type: none;
-      gap: 10px;
+      gap: min(9%, 10rem);
+      width: fit-content;
+      justify-content: center;
       li {
         a {
           text-decoration: none;
           &.active {
-            color: red;
+            color: blue;
+            font-weight: bold;
           }
           &:hover {
             color: pink;
