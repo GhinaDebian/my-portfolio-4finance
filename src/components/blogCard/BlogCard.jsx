@@ -1,27 +1,19 @@
 import React from "react";
 import "./BlogCard.scss";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const BlogCard = (props) => {
-  const { id, title, author, date, content, tags, onClick, buttonMessage } =
-    props;
+  const { id, title, content, buttonEnabled = true } = props;
   return (
     <div className="blogCard">
-      <h1>Person {id}</h1>
-      <p>{title}</p>
-      <p>
-        by {author}, {date}
-      </p>
+      <p className="title">{title}</p>
       <p>{content}</p>
-      <br />
-      <p>
-        {tags.map((element) => {
-          return <>{element + ", "}</>;
-        })}
-      </p>
-      <Button variant="outlined" onClick={onClick}>
-        {buttonMessage}
-      </Button>
+      {buttonEnabled ? (
+        <Button component={Link} to={"/blog-details/" + String(id)}>
+          See More
+        </Button>
+      ) : null}
     </div>
   );
 };

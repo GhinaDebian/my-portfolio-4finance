@@ -1,23 +1,26 @@
-import React from "react";
-import { blogData, people } from "../../utils/dummyData";
+import React, { useEffect, useState } from "react";
 import "./Blogs.scss";
 import BlogCard from "../../components/blogCard/BlogCard";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Blogs = () => {
-  let navigate = useNavigate();
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const getAllPosts = () => {
+      axios
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .then((res) => setPosts(res.data));
+    };
+    getAllPosts();
+  }, []);
   return (
     <div className="blogs">
-      {blogData.map((blog) => (
+      {posts.map((post) => (
         <BlogCard
-          id={blog?.id}
-          title={blog?.title}
-          author={blog?.author}
-          date={blog?.date}
-          content={blog?.content}
-          tags={blog?.tags}
-          onClick={() => navigate("/blog-details/" + blog?.id)}
-          buttonMessage="View Profile"
+          key={post.id}
+          title={post.title}
+          content={post.body}
+          id={post.id}
         />
       ))}
     </div>
